@@ -14,13 +14,13 @@ export default function Pagamentos() {
       <h1 className="text-4xl font-bold">Pagamentos</h1>
       <button
         className="border rounded-md px-2 cursor-pointer"
-        onClick={() => createPaymentStripeCheckout("teste")}
+        onClick={() => createPaymentStripeCheckout({ testeId: "teste" })}
       >
         Criar pagamento Stripe
       </button>
       <button
         className="border rounded-md px-2 cursor-pointer"
-        onClick={() => createSubscriptionStripeCheckout("teste")}
+        onClick={() => createSubscriptionStripeCheckout({ testeId: "teste" })}
       >
         Criar assinatura Stripe
       </button>
