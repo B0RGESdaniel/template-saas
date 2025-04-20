@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
 
   const paymentId = searchParams.get("payment_id");
-  const testeId = searchParams.get("external-reference");
+  const testeId = searchParams.get("external_reference");
 
   if (!paymentId || !testeId) {
     return NextResponse.json({ error: "Payment not found" }, { status: 404 });
@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
   });
 
   if (paymentData.status === "approved" || paymentData.date_approved !== null) {
-    return NextResponse.redirect(new URL(`success`, req.url));
+    return NextResponse.redirect(new URL(`/success`, req.url));
   }
 
   return NextResponse.redirect(new URL(`/`, req.url));
